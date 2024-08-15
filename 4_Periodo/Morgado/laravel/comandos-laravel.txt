@@ -1,0 +1,2 @@
+composer create-project laravel/laravel aula
+No terminal do vscode composer install
