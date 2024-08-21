@@ -1,2 +1,6 @@
 composer create-project laravel/laravel aula
 No terminal do vscode composer install
+
+para iniciar o projeto php artisan serve
+
+criando controller com o comando: php artisan make:controller <nome do controller> -r
