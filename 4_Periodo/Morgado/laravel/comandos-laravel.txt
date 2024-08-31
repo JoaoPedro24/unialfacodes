@@ -4,3 +4,5 @@ No terminal do vscode composer install
 para iniciar o projeto php artisan serve
 
 criando controller com o comando: php artisan make:controller <nome do controller> -r
+
+php artisan make:mode Client -m 
