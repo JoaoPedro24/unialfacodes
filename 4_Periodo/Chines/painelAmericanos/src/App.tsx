@@ -11,6 +11,6 @@ function App() {
 }
 
 //mobiel
-const stuyles2 = StyleSheet
+const styles2 = StyleSheet
 
 export default App
