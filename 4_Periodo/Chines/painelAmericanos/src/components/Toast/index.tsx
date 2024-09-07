@@ -13,7 +13,7 @@ export const Toast = (props: IProps) => {
         style={{position:'absolute', zIndex: 100, right: 0}}
         onClose={props.onClose}
         show={props.show}
-        delay={3000}
+        delay={2000}
         autohide
         bg={props.color ? props.color : 'success'}
         >

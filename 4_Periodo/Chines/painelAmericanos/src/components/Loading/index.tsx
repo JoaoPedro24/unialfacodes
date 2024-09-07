@@ -1,5 +1,5 @@
 interface IProps{
-    visible:boolean
+    visible: boolean
 }
 
 export const Loading = (props: IProps) => {

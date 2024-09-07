@@ -13,6 +13,7 @@ export default function Login() {
     const refForm = useRef<any>()
 
     const[isLoading, setIsLoading] = useState(false)
+    const[isToast, setIsToast] = useState(false)
 
     const submitForm = useCallback((event: SyntheticEvent) => {
         event.preventDefault(); //nao permite o botao de type submit dar RELOAD.
@@ -35,10 +36,17 @@ export default function Login() {
                 password: target.senha.value
             }
             ).then((resposta) => {
+                console.log(resposta.data)
+                //não usar
+                // window.location('/')
+
+                localStorage.setItem('americanos.token', JSON.stringify(resposta.data))
                 navigate('/dashboard')
             })
             .catch((erro) => {
                 console.log(erro)
+                setIsLoading(false)
+                setIsToast(true)
             })
 
         } else {
@@ -54,8 +62,8 @@ export default function Login() {
          />
          <Toast
             message='Credenciais inválidas'
-            onClose={() => {}}
-            show={true}
+            onClose={() => {setIsToast(false)}}
+            show={isToast}
             color='danger'
             />
             <div className={styles.main}>
