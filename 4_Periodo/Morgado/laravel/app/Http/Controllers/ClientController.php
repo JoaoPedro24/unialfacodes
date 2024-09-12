@@ -43,7 +43,13 @@ class ClientController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $client = Client::find($id);
+
+        dd($client);
+        return view('clients.show', [
+            'client' => $client
+        ]);
+        
     }
 
     /**

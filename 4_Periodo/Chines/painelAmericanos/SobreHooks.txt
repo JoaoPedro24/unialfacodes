@@ -1,0 +1,12 @@
+Hooks no React são funções que permitem utilizar estados e outras funcionalidades em componentes funcionais.
+Eles eliminam a necessidade de componentes de classe para lidar com estado e ciclo de vida.
+================================================================================================
+useState: Controla o estado de um componente, permitindo a leitura e modificação de valores.
+=================================================================================================
+useEffect: Realiza efeitos colaterais, como consultas de dados ou manipulação do DOM, após a renderização.
+===========================================================================================================
+useCallback: Armazena funções para evitar sua recriação em cada atualização, melhorando a performance.
+===========================================================================================================
+useRef: Mantém uma referência mutável que não provoca nova renderização, sendo útil para acessar diretamente
+elementos DOM ou guardar valores persistentes.
+==============================================================================================================
