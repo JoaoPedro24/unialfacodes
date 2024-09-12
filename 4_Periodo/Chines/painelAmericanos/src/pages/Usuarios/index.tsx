@@ -3,6 +3,7 @@ import { LayoutDashboard } from "../../components/LayoutDashboard";
 import { IToken } from "../../interfaces/token";
 import { verificaTokenExpirado } from "../../services/token";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 
 export default function Usuarios() {
@@ -22,6 +23,15 @@ export default function Usuarios() {
         if (!token || verificaTokenExpirado(token.accessToken)){
          navigate('/') 
         }
+
+        axios.get('http://localhost:5173/users')
+        .then((resposta) =>{
+            console.log(resposta.data);
+        })
+        .catch((err)=>{
+            console.log(err);
+            
+        })
     }, [])
 
     return(

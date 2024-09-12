@@ -1,13 +1,23 @@
-import { ReactNode } from "react"
-import { Link } from 'react-router-dom'
+import { ReactNode, useCallback } from "react"
+import { Link, useNavigate } from 'react-router-dom'
 
 interface IProps{
     children: ReactNode
 }
+
+
 export const LayoutDashboard = (props: IProps) => {
+
+    const navigate = useNavigate()
+    
+    const logout = useCallback(() => {
+        localStorage.removeItem("americanos.token");
+        navigate('/') 
+    }, [])
+
     return(
         <>
-.<header
+<header
                 className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0"
             >
                 <a className="navbar-brand col-md-3 col-lg-2 me-0 px-3"
@@ -29,7 +39,7 @@ export const LayoutDashboard = (props: IProps) => {
                 <div className="w-100"></div>
                 <div className="navbar-nav">
                     <div className="nav-item text-nowrap">
-                        <a className="nav-link px-3" href="#">Sair</a>
+                        <button className="nav-link px-3 btn-danger" type="button" onClick={logout}>Sair</button>
                     </div>
                 </div>
             </header>
@@ -56,6 +66,14 @@ export const LayoutDashboard = (props: IProps) => {
                                         to ={'/usuarios'}
                                     >
                                         Usuarios
+                                    </Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link
+                                        className={`nav-link`}
+                                        to ={'/voluntarios'}
+                                    >
+                                        Voluntarios
                                     </Link>
                                 </li>
                             </ul>

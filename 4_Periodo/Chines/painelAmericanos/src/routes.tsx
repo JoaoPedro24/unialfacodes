@@ -8,6 +8,7 @@
     import Produto from './pages/Produto'
     import PageExampleState from './pages/PageExampleState'
 import Usuarios from './pages/Usuarios'
+import Voluntarios from './pages/Voluntarios'
     
 
   
@@ -31,9 +32,15 @@ import Usuarios from './pages/Usuarios'
                     path='/usuarios'
                     element={<Usuarios/>}
                     />
+
                     <Route
                     path= '/produto/:id'
                     element={<Produto />}
+                    />
+
+                    <Route
+                    path= '/voluntarios'
+                    element={<Voluntarios />}
                     />
 
 
